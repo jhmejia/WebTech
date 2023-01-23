@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial;
+        margin: 0;
+      }
+
+      .header {
+        grid-area: header;
+        padding: 60px;
+        text-align: center;
+        background-color: #1abc9c;
+        color: white;
+      }
+
+      .navbar {
+        grid-area: navbar;
+        background-color: #333;
+      }
+
+      .navigation-list {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Style the navigation bar links */
+      .navigation-item a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      /* Change color on hover */
+      .navigation-item a:hover {
+        background-color: #ddd;
+        color: black;
+        transition-duration: 1000ms;
+      }
+
+      .side {
+        grid-area: side;
+        background-color: #f1f1f1;
+      }
+
+      .main {
+        grid-area: main;
+        background-color: white;
+      }
+
+      .footer {
+        grid-area: footer;
+        text-align: center;
+        background-color: #333;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          'header header header header header header'
+          'navbar navbar navbar navbar navbar navbar'
+          'side side main main main main'
+          'footer footer footer footer footer footer';
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+      .menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+      }
+
+      .menu a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      .menu a:hover {
+        background-color: #ccc;
+      }
+
+      .menu a.active {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <h1>Welcome to My Website</h1>
+        <p>You can find all kinds of cool stuff here.</p>
+      </header>
+      <nav class="navbar">
+        <ul class="navigation-list">
+          <li class="navigation-item"><a href="#">Home</a></li>
+          <li class="navigation-item"><a href="#">News</a></li>
+          <li class="navigation-item"><a href="#">Contact</a></li>
+          <li class="navigation-item"><a href="#">Donation</a></li>
+        </ul>
+      </nav>
+      <aside class="side">
+        Menu
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </aside>
+      <main class="main">
+        <section>
+          <h1>WWF</h1>
+          <p>
+            The World Wide Fund for Nature (WWF) is an international
+            organization working on issues regarding the conservation, research
+            and restoration of the environment, formerly named the World
+            Wildlife Fund. WWF was founded in 1961.
+          </p>
+        </section>
+
+        <section>
+          <h1>WWF's Panda symbol</h1>
+          <p>
+            The Panda has become the symbol of WWF. The well-known panda logo of
+            WWF originated from a panda named Chi Chi that was transferred from
+            the Beijing Zoo to the London Zoo in the same year of the
+            establishment of WWF.
+          </p>
+        </section>
+        <article>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+          officiis, soluta quia accusamus perferendis asperiores reiciendis
+          ipsam quasi suscipit temporibus. Libero officia tempore iure illo
+          corporis? Obcaecati repellat magni optio, quidem blanditiis voluptas
+          iste? Quae in nulla esse itaque amet quo quasi consequatur natus
+          consectetur neque. Rerum, odit veniam? Harum nulla, minima porro
+          reprehenderit incidunt vero laudantium suscipit enim cum sapiente?
+          Mollitia, provident obcaecati laudantium, deleniti, quae animi veniam
+          ad cumque fugit iure fuga error consequatur iste. Quasi corrupti sit
+          debitis temporibus? Iusto eveniet consequatur laborum reiciendis,
+          maxime nemo, fugit fuga in voluptatem voluptates deserunt ea quod,
+          iure sapiente! Maiores aut molestias fugiat ipsa aperiam, nemo atque
+          optio quasi, magnam eum debitis iusto inventore odio. Nulla excepturi
+          exercitationem iure placeat, eos neque eveniet, beatae, cupiditate
+          alias sunt suscipit voluptatem expedita quasi! Molestias unde
+          explicabo autem ea dolore velit blanditiis sapiente culpa consequuntur
+          nobis, odit a, atque ipsum eligendi laborum nostrum. Exercitationem,
+          facilis. Minima deserunt quos enim officia nesciunt placeat rerum
+          asperiores? Ea aperiam architecto voluptates temporibus? Harum, sint
+          ab cum illo consectetur expedita vitae? Tempora sint doloremque vitae
+          quis accusantium temporibus dolorem fugiat veniam maxime recusandae ex
+          hic impedit dolorum natus magnam, possimus libero consequatur vel
+          repudiandae tempore! Fugiat animi impedit repudiandae possimus, at
+          esse sed officia magni similique ab corporis et vitae tempora fuga
+          numquam modi aspernatur architecto quo ullam aperiam? Alias error
+          asperiores, aspernatur culpa vitae itaque vel reiciendis fugit
+          mollitia officia pariatur, ratione quis! Vel, corporis beatae placeat
+          incidunt amet laborum corrupti repellendus molestiae labore quasi
+          facilis molestias ipsum ipsam natus eum sint quaerat suscipit dolorem
+          debitis vero? Nisi minus odit natus laboriosam quo, ut quam, adipisci
+          voluptate molestias dignissimos ipsa cum hic nostrum deleniti quas
+          eaque. Optio provident, tempore ex enim pariatur perspiciatis eius
+          itaque impedit necessitatibus porro ullam consequatur similique
+          voluptas quia reprehenderit ipsa iusto tenetur autem laborum! Earum
+          rerum veritatis sunt consectetur officia iure sed dicta quasi eos, qui
+          dolores alias tempore! Eos culpa nostrum odio aperiam provident!
+          Labore culpa saepe velit ad, tempore repudiandae voluptates mollitia
+          cupiditate consectetur. Odio nostrum voluptatum placeat eos est vero
+          dolorem repellendus facilis! Voluptatum iure, est aspernatur earum
+          iusto explicabo repellat at blanditiis quibusdam voluptatem temporibus
+          perspiciatis cum deserunt officia quisquam veniam odit exercitationem
+          soluta, labore similique! Corrupti itaque illum fuga accusamus nam
+          quaerat sit possimus autem modi eum? Fuga laborum recusandae adipisci,
+          cumque doloremque, quam nihil distinctio voluptas aperiam blanditiis
+          modi, debitis aliquam ipsa! Dolores sint nesciunt quaerat rerum! Id
+          facere blanditiis fugiat ipsa, perferendis eaque! Numquam voluptas
+          modi illo asperiores autem nesciunt similique minima velit dolor aut.
+          Eos, cumque ducimus. Necessitatibus, corrupti eos quae laudantium
+          expedita reiciendis officia quasi voluptate modi eaque dolores
+          excepturi quis possimus, eius asperiores sint quo aut quod totam
+          suscipit. Sapiente iste cupiditate voluptas animi error dicta earum,
+          nihil facilis eos illo perspiciatis, blanditiis nobis? Vero nostrum
+          distinctio quis deleniti ratione sapiente doloremque deserunt nemo vel
+          reprehenderit quam eveniet, optio, sed ea, sint mollitia alias itaque
+          aspernatur. Nostrum odio illum facere maxime quo reiciendis, libero
+          quas quae quidem animi, eius laudantium doloribus!
+        </article>
+      </main>
+      <footer class="footer">
+        <ul class="navigation-list">
+          <li class="navigation-item"><a href="#">Terms of Use</a></li>
+          <li class="navigation-item"><a href="#">Customer Service</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
