@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-
+        .grid>* {
+            background: yellow;
+            padding: 2rem;
+        }
+        @media screen and (min-width: 40em) {
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-template-rows: 5rem auto auto;
+                grid-template-areas:
+                "logo navigation navigation"
+                "content content aside"
+                "footer footer footer";
+                grid-gap: lrem;
+            }
+            .logo {
+                grid-area: logo;
+            }
+            .navigation {
+                grid-area: navigation;
+            }
+            .content {
+                grid-area: content;
+            }
+            .aside {
+                grid-area: aside;
+            }
+            .footer {
+                grid-area: footer;
+            }
+        }
+        @media screen and (min-width: 60em) {
+            .grid {
+                grid-template-columns: 1fr minmax(3fr, 50em) 1fr;
+                grid-template-rows: 5rem auto auto;
+                grid-template-areas:
+                "logo . . "
+                "navigation content aside "
+                "footer footer footer";
+                grid-gap: lrem;
+                min-height: 100vh;
+            }
+        }
     </style>
-</head>
+  </head>
 
-<body>
-    <div>
-        <div>
-            Logo
-        </div>
-        <nav>
-            Navigation
-        </nav>
-        <main>
-            Content
-        </main>
-        <aside>
-            Aside
-        </aside>
-        <footer>
-            Footer
-        </footer>
+  <body>
+    <div class="grid">
+      <div class="logo">Logo</div>
+      <nav class="navigation">Navigation</nav>
+      <main class="content">Content</main>
+      <aside class="aside">Aside</aside>
+      <footer class="footer">Footer</footer>
     </div>
-</body>
-
+  </body>
 </html>
