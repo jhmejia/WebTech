@@ -7,7 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Units</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        section {
+            background: linear-gradient(to bottom, magenta, cyan);
+            height: 100vh;
+        }
 
+        div {
+            height: 50px;
+        }
+
+        #one {
+            width: 100vw;
+            background-color: red;
+        }
+
+        #two {
+            width: 80vw;
+            background-color: orange;
+        }
+
+        #three {
+            width: 50vw;
+            background-color: yellow;
+        }
+
+        #nested1 {
+            width: 50%;
+            height: 50%;
+            background-color: green;
+        }
+
+        #nested2 {
+            width: 30%;
+            height: 50%;
+            background-color: purple;
+        }
     </style>
 </head>
 
@@ -15,11 +54,11 @@
     <!-- try to resize your browser to see the responsiveness! -->
     <section>
         <h1>Welcome to CSS Units! Section 1</h1>
-        <div></div>
-        <div></div>
-        <div>
-            <div></div>
-            <div></div>
+        <div id = "one"></div>
+        <div id = "two"></div>
+        <div id = "three">
+            <div id = "nested1"></div>
+            <div id = "nested2"></div>
         </div>
     </section>
     <section>
