@@ -1,0 +1,16 @@
+div { 
+    color: green;
+}
+
+p {
+    color: red;
+    font-size: 30px;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 15px;
+    padding: 120px;
+    border: 1px solid red;
+    width: 500px;
+}
