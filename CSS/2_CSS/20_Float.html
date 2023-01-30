@@ -6,15 +6,32 @@
   <title>css Box model</title>
 
   <style>
-
+    section {
+      border: 1px solid blue;
+      width: 50%;
+    }
+    div {
+      margin: 5px;
+      width: 50px;
+      height: 150px;
+    }
+    .left {
+      float: left;
+      background: pink;
+    }
+    .right
+    {
+      float: right;
+      background: cyan;
+    }
   </style>
 </head>
 
 <body>
   <section>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+    <div class="left">1</div>
+    <div class="left">2</div>
+    <div class="right">3</div>
     <!-- Hello, I am in side section, uncomment me to see the effect -->
   </section>
   <!-- I am defined right after section tag, where am I? uncomment me to see the effect -->

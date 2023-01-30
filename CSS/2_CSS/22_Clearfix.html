@@ -6,15 +6,38 @@
   <title>css Box model</title>
 
   <style>
+    section {
+      border: 1px solid blue;
+      width: 50%;
+      /*overflow: auto*/
+    }
 
+    div {
+      margin: 5px;
+      width: 50px;
+      height: 150px;
+      background: red;
+    }
+
+    .left {
+      float: left;
+      background: rgba(255, 192, 203, 0.5);
+    }
+
+    .right {
+      float: right;
+      background: cyan;
+    }
+
+    
   </style>
 </head>
 
 <body>
   <section>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
+    <div class="left">1</div>
+    <div class="left">2</div>
+    <div class="right">3</div>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique sapien ac erat tincidunt, sit amet
     dignissim lectus vulputate. Donec id iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa aliquet
     tincidunt vel in massa. Phasellus feugiat est vel leo finibus congue.
