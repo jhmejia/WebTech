@@ -3,7 +3,23 @@
 
 <head>
     <style>
+        .fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
 
+            width: 500px;
+            height: 200px;
+            background-color: green;
+            border: 2px solid #4CAF50;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: green;
+            border: 2px solid #4CAF50;
+        }
     </style>
 </head>
 
@@ -11,7 +27,7 @@
     <!-- In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position. -->
     <p>Try to <b>scroll</b> to understand how sticky positioning works.</p>
 
-    <div>I am sticky!</div>
+    <div class = "sticky">I am sticky!</div>
 
     <div style="padding-bottom:2000px">
         <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll
@@ -33,7 +49,7 @@
             concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
             Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
     </div>
-    <div>I am fixed!</div>
+    <div class= "fixed">I am fixed!</div>
 
 </body>
 

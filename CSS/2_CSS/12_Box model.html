@@ -6,7 +6,29 @@
     <title>CSS Box model</title>
 
     <style>
+        div {
 
+            border: 1px solid red;
+            width: 100px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .box {
+            width : 500px;
+            height: 500px;
+            border-width: 1px 10px 100px 200px;
+            border-color: red;
+            margin: 30px;
+            padding: 50px;
+        }
+
+        .imagebox {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -17,7 +39,7 @@
         cupiditate quo.
     </p>
 
-    <div>
+    <div class="box">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nemo animi ipsum enim recusandae repellendus
         voluptatibus nobis atque, dolore ad! Voluptatibus quasi consequatur consequuntur optio, minus culpa quos
         cupiditate quo.
@@ -27,8 +49,8 @@
         voluptatibus nobis atque, dolore ad! Voluptatibus quasi consequatur consequuntur optio, minus culpa quos
         cupiditate quo.
     </div>
-    <div></div>
-    <img src="img/goku.png" width="300" height="300">
+    <div class="imagebox">
+        <img src="img/goku.png" width="300" height="300">
     </div>
 
 </body>
