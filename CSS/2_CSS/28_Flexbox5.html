@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans :wght@300édisplay=swap");
+      body {
+        background-color: #eee;
+        margin: 0;
+        font-family: Open Sans;
+      }
+      nav {
+        background-color: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        height: 80px;
+      }
+      nav a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: black;
+        transition: all 0.2s;
+      }
+      nav a:hover {
+        background: #2196f3;
+        color: white;
+      }
+      .active {
+        border-bottom: 10px solid #2196f3;
+        padding-top: 10px;
+      }
+      main {
+        height: calc(100vh - 80px);
+      }
+      hl,
+      h2 {
+        margin: 0;
+      }
+      hi {
+        font-size: 3em;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     HTML CSSResult Skip Results Iframe
     <nav>
-        <a href="#home">Home</a>
-        <a href="#home" class="active">About</a>
-        <a href="#home">Contact</a>
-        <a href="#home">Help</a>
-        <a href="#home">Logout</a>
+      <a href="#home">Home</a>
+      <a href="#home" class="active">About</a>
+      <a href="#home">Contact</a>
+      <a href="#home">Help</a>
+      <a href="#home">Logout</a>
     </nav>
 
     <main>
-        <h1>Flexbox</h1>
-        <h2>It's Pretty Useful!</h2>
+      <h1>Flexbox</h1>
+      <h2>It's Pretty Useful!</h2>
     </main>
-</body>
-
+  </body>
 </html>

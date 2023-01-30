@@ -6,19 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        html {
+            background: #FCE4EC;
+            font-family: Arial;
+            text-transform: uppercase;
+        }
+        main {
+            display: flex;
+        }
+        .item {
+            font-size : 1.5 rem;
+            line-height: 1;
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #F8BBD0;
+            border: 6px solid #E91E63;
+            color: #E91E63;
+            margin: 6px;
+        }
 
+        article.item {
+            border: 6px solid #9C27B0;
+            background-color: #E1BEE7;
+            color: #9C27B0;
+            order: 2;
+            flex: 3;
+        }
+
+        .sidebar-left {
+            order: 1;
+            flex: 1;
+            background-color:  #C5CAE9;
+            border: 6px solid #3F51B5;
+            color: #3F51B5;
+        }
+        .sidebar-right {
+            order: 3;
+            flex: 1;
+            background-color: #B2DFDB;
+            border: 6px solid #009688;
+            color: #009688;
+        }
+
+        @media screen and (max-width: 575px)
+        {
+            main {
+                flex-direction: column;
+            }
+            .sidebar-left {
+                order: 2;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <header>Nav Bar/Header</header>
+    <div class="container">
+        <header class="item">Nav Bar/Header</header>
         <main>
-            <article>The Main Article!</article>
-            <aside>Left Sidebar</aside>
-            <aside>Right Sidebar</aside>
+            <article class="item">The Main Article!</article>
+            <aside class="item sidebar-left">Left Sidebar</aside>
+            <aside class=" item sidebar-right">Right Sidebar</aside>
         </main>
-        <footer>Footer</footer>
+        <footer class="item">Footer</footer>
     </div>
 </body>
 

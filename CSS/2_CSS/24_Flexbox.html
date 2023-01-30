@@ -6,47 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @media(min-width: 468px) {
+            .container {
+                height: 500px;
+                display: flex;
+                flex-wrap: wrap;
+                border: 8px solid black;
+                /*justify-content: space-between;*/
+            }
+        }
 
+        .container div {
+            border: 1px #ccc solid;
+            padding: 10px;
+        }
+
+        .box-1 {
+            background-color: #e51400;
+            flex-basis: 20px;
+        }
+        .box-2 {
+            background-color: #fa6800;
+            flex-basis: 20px;
+        }
+        .box-3 {
+            background-color: #f0a30a;
+            flex-basis: 20px;
+        }
+        .box-4 {
+            background-color: #e3c800;
+            flex-basis: 20px;
+        }
+        .box-5 {
+            background-color: #a4c400;
+            flex-basis: 20px;
+        }
+        .box-6 {
+            background-color: #60a917;
+            flex-basis: 20px;
+        }
+        .box-7 {
+            background-color: #00aba9;
+            flex-basis: 20px;
+        }
+        .box-8 {
+            background-color: #1ba1e2;
+            flex-basis: 20px;
+        }
+        .box-9 {
+            background-color: #aa00ff;
+            flex-basis: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div>
-            <h3>Box One</h3>
+        <div class="box-1">
+            <h3 >Box One</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <!-- Uncomment the following and see the effect. -->
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-        </div>
-        <div>
-            <h3>Box Two</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-2">
+            <h3 >Box Two</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class = "box-3">
             <h3>Box Three</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-4">
             <h3>Box Four</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div>
+        </div >
+        <div class="box-5">
             <h3>Box Five</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-6">
             <h3>Box Six</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-7">
             <h3>Box Seven</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-8">
             <h3>Box Eight</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div>
+        <div class="box-9">
             <h3>Box Nine</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
