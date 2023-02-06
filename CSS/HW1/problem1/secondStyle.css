@@ -1,0 +1,19 @@
+* {
+    font-size: 40px;
+    font-family: Tahoma;
+}
+
+.container {
+    position: absolute;
+    left: 45%;
+}
+
+.f-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-width: 100px;
+    border-color:aqua;
+    margin: 10px;
+    
+}
