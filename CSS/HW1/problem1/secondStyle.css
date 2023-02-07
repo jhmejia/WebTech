@@ -4,8 +4,24 @@
 }
 
 .container {
-    position: absolute;
+    /*position: absolute;*/
     left: 45%;
+    display: flex;
+    
+}
+
+.box {
+    width: 100px;
+    height: 150px;
+    border-left: 7px dotted black;
+    margin: 10px;
+    text-align: left 10px;
+    background-color: aqua;
+}
+
+.text 
+{
+    margin-left: 10px;
 }
 
 .f-fixed {
@@ -13,6 +29,7 @@
     bottom: 0;
     right: 0;
     border-width: 100px;
+    border-style: solid;
     border-color:aqua;
     margin: 10px;
     
