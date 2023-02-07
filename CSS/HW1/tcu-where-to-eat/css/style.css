@@ -2,6 +2,8 @@
  TODO(you): Write the CSS necessary to complete problem2 of HW1
 */
 
+
+
 header {
     background-image: url(../images/header.jpg);
     background-size: cover;
@@ -10,14 +12,21 @@ header {
     width: 100%;
     justify-content: center;
     align-items: center;
-}
+    margin: 0 ;
+    /* word wrap */
+    word-wrap: normal;
 
+}
+body {
+
+    margin: 0 auto;
+}
 h1 {
     text-align: center;
     justify-content: center;
     align-items: center;
     line-height: 500px;
-    
+    margin: 0;
     /* text color white */
     color: white;
     /* font face roboto slab */
@@ -25,6 +34,10 @@ h1 {
     /* font size 36px */
     font-size: 36px;
     /*max-width: 780px;*/
+    word-wrap: normal;
+    /* wrap text */
+    /*text-align: center;*/
+
 }
 
 .circle-img {
@@ -48,7 +61,6 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    max-width: 780px;
     font-family: 'Roboto Slab', serif;
     font-size: 18px;
     color: rgb(51,51,51);
@@ -56,4 +68,10 @@ h1 {
 
 .author {
     font-weight: bold;
+}
+
+
+.big-box {
+    width: 66.66666667%;
+    margin: 0 auto;
 }
