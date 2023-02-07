@@ -2,3 +2,58 @@
  TODO(you): Write the CSS necessary to complete problem2 of HW1
 */
 
+header {
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 500px;
+    
+    /* text color white */
+    color: white;
+    /* font face roboto slab */
+    font-family: 'Roboto Slab', serif;
+    /* font size 36px */
+    font-size: 36px;
+    /*max-width: 780px;*/
+}
+
+.circle-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.djpng {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    display: block;
+}
+
+.profile {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 780px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    color: rgb(51,51,51);
+}
+
+.author {
+    font-weight: bold;
+}
