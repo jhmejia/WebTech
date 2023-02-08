@@ -75,3 +75,12 @@ h1 {
     width: 66.66666667%;
     margin: 0 auto;
 }
+
+hr {
+    height: 2px;
+    width: 200px;
+    background: #e6e6e6;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: none;
+}
