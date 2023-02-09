@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Global Object</title>
+    <script>
+        let str = "https://www.amazon.com/s?k=网页设计&ref=nb_sb_noss";
+
+        let encode = encodeURI(str);
+        document.write(encode + '<br>');
+        //https://www.amazon.com/s?k=%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1&ref=nb_sb_noss
+        let s = decodeURI(encode);
+        document.write(s + '<br>');//https://www.amazon.com/s?k=网页设计&ref=nb_sb_noss
+
+        let a = NaN;
+
+        document.write(a == NaN);
+        document.write('<br>');
+        document.write(isNaN(a));
+
+        let jscode = "alert(123)";
+        eval(jscode);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

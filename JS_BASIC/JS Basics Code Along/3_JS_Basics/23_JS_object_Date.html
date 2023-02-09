@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dates</title>
+    <script>
+
+        /*
+           The toLocaleString() method converts a Date object to a string, using locale settings. The default language depends on the locale setup on your computer.
+           The getTime() method returns the number of milliseconds between midnight of January 1, 1970 and the specified date.
+         */
+
+        let date = new Date();
+
+        document.write(date + '<br>');
+
+        document.write(date.toLocaleString() + '<br>');
+
+        document.write(date.getFullYear() + '<br>');
+
+        document.write(date.getTime() + '<br>');
+
+        let birthday = new Date('10-23-1995');
+        document.write(birthday + '<br>');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
