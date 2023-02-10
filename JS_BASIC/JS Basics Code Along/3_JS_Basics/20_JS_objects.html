@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Object Literals</title>
+    <script>
+      // define an object literal
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        hobbies: ["music", "Football", "Coding"],
+        id: 5566,
+        address: {
+          street: "123 Main Street",
+          city: "Fort Worth",
+          state: "TX",
+          Zip: "76129",
+        },
+        getFullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
 
-<head>
-	<meta charset="UTF-8">
-	<title>JS Object Literals</title>
-	<script>
-		// define an object literal
+	  
+      console.log(person);
+      console.log(person.firstName);
+      console.log(person["firstName"]);
+      console.log(person.hobbies[2]);
+      person.ssn = "123456789";
+      console.log(person.ssn);
+      console.log(person.address.city);
+      console.log(person.getFullName());
 
+	  
+      // destructing: pulling out three fields and form a new object, very useful
+      
+	  const { firstName, lastName, id } = person;
+	  
+      console.log(firstName, lastName, id);
+      const { firstName: fn, lastName: ln, id } = person;
+      // rename
+      console.log(fn, ln, id);
+      // a different way to define an object
+      let person2 = new Object();
+      person2.firstName = "John";
+      person2.lastName = "Doe";
+      person2.age = 50;
+      person2.eyeColor = "blue";
+      for (property in person2) {
+        document.write(person2[property] + "<br>");
+      }
+      // convert JS object literals to JSON, so we can send it to the server through AJAX technique
+      console.log(JSON.stringify(person));
+    </script>
+  </head>
 
-	</script>
-</head>
-
-<body>
-
-</body>
-
+  <body></body>
 </html>
