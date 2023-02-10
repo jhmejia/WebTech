@@ -31,15 +31,15 @@
       console.log(person.address.city);
       console.log(person.getFullName());
 
-	  
+
       // destructing: pulling out three fields and form a new object, very useful
       
-	  const { firstName, lastName, id } = person;
+	  const { firstName, lastName, address2} = person;
 	  
-      console.log(firstName, lastName, id);
-      const { firstName: fn, lastName: ln, id } = person;
+      console.log(firstName, lastName);
+      const { firstName: fn, lastName: ln, address} = person;
       // rename
-      console.log(fn, ln, id);
+      console.log(fn, ln, address2);
       // a different way to define an object
       let person2 = new Object();
       person2.firstName = "John";
