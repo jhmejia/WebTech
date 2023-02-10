@@ -5,7 +5,24 @@
     <meta charset="UTF-8">
     <title>JS OOP ES6 (the modern way)</title>
     <script>
+        class Person {
+            constructor(firstName, lastName, id) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.id = id;
+            }
 
+            getFullName = () => this.firstName + " " + this.lastName;
+        }
+
+        let jim = new Person("Jim", "Green", 1001);
+        console.log(jim.firstName + ' ' + jim.lastName);
+
+        let mary = new Person("Mary", "Smith", 1002);
+        console.log(mary.firstName + ' ' + mary.lastName);
+        console.log(mary.getFullName());
+
+        console.log(jim);
     </script>
 </head>
 
