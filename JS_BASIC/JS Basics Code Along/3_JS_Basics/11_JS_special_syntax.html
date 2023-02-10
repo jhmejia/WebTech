@@ -7,19 +7,21 @@
     <script>
         //1. ; can be ommitted if every statement takes one line (this is not recommended)
 
-
+        let a = 3
         /*
         2. it is possible to ommit let or var in front of variable name
             * using let or var： local variable
             * not using let or var：gloabl variable(this is not recommended)
          */
-        let a = 100;
-        const b = 200;
+        let b;
 
+        
+        function fun()
         {
-            var c = 500;
+            b = 4;
         }
-        console.log(c);
+        fun();
+        console.log(b);
 
     </script>
 </head>

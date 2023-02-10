@@ -5,7 +5,27 @@
     <meta charset="UTF-8">
     <title>Unary operators</title>
     <script>
+        let num = 3;
+        let a = ++num;
 
+        document.write(num + '<br>');
+        document.write(a);
+        // The result is 4 and 4
+
+        document.write("<hr>");
+
+        let b = +'123abc';
+        document.write(typeof(b));
+
+        document.write(b+1);
+        document.write("<hr>");
+
+        let flag = + true;
+        let f2 = + false;
+
+        document.write (typeof (flag) + '<br>');
+        document.write (flag + '<br>');
+        document.write (f2 + '<br>');
 
     </script>
 </head>

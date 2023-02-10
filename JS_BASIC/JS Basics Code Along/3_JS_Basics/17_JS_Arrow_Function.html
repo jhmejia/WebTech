@@ -8,7 +8,28 @@
 
 <body>
     <script>
+        let add = function(num1, num2)
+        {
+            return num1 + num2;
+        }
 
+        add = (num1, num2) => {
+            return num1 + num2;
+        }
+
+        add = (num1, num2) => num1 + num2; //can be simplified to this
+
+        let squareNumber = number => number * number; 
+        //if there is only one parameter, the parentheses can be omitted
+
+        console.log(squareNumber(5));
+
+        fetch('http://api.icndb.com/jokes/random/5', { method: 'GET' })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            });
+         
     </script>
 </body>
 

@@ -34,56 +34,110 @@
 
         //***forEach()***
         //1. Print each wizard to the console
+        wizards.forEach(wizard => console.log(wizard));
 
         //2. Everyone grows 5cm
+        wizards.forEach(wizard => wizard.height += 5);
+
+        wizards.forEach(wizard => console.log(wizard));
+
 
         //***filter()***: select a subset of the array
         //1. Get wizards with height less than 170
+        const wizardsWithHeightLessThan170 = wizards.filter(wizard => wizard.height < 170);
+        console.log(wizardsWithHeightLessThan170);
         
         //2. Get all male wizards
-       
+        const maleWizards = (wizards.filter(wizard => wizard.gender === 'male'));
 
+        console.log(maleWizards);
         //***some()***
         //1. Is there at least one male wizard?
        
+        const isOneMaleWizard = wizards.some(wizard => wizard.gender === 'male');
+        console.log(maleWizards);
+
         //2. Is there at least one wizard with blue hairs?
         //3. Is there at least one wizard taller than 210?
 
         //***every()***
         //1. Does every wizard have blue hairs?
        
+        const isEveryWizardBlue = wizards.every(wizard => wizard.hair_color ==='blue');
+        console.log(isEveryWizardBlue);
+
         //2. Is every wizard shorter than 200?
         //3. Is every wizard male?
 
         //***map()***: transform elements in the array
         //1. Get array of all names
-
+        const wizardNames = wizards.map(wizard => wizard.name);
+        console.log(wizardNames);
         //2. Get array of all heights
-      
-        //3. Get array of objects with just name and height properties
+        const wizardHeights = wizards.map(wizard => wizard.height);
+        console.log(wizardHeights);
 
+        //3. Get array of objects with just name and height properties
+        const wizardNamesAndHeights = wizards.map(wizard => ({
+            name: wizard.name,
+            height: wizard.height
+        }));
+        console.log(wizardNamesAndHeights);
         //4. Get array of all first names
-       
+        const wizardFirstNames = wizards.map(wizard=>wizard.name.split(' ')[0]);
+       console.log(wizardFirstNames);
 
         //***find()***: select a single element from an array
         //1. Find one wizard with brown hair
-       
+        const brownhairWizard = wizards.find(wizard => wizard.hair_color==='brown');
+       console.log(brownhairWizard);
 
         //***reduce()***: derive a single value from multiple elements in an array
         //1. Get total height of all wizards
 
+        const totalHeight = wizards.reduce((total,wizard) =>
+           total + wizard.height,0);  
+
+         console.log(totalHeight);
+
+
         // console.log(totalHeight);
 
         //2. Get the max of height
-       
+        const maxHeight = wizards.reduce((max,wizard) =>{
+            return max < wizard.height ? wizard.height : max;
+        },0);    
+        console.log(maxHeight);
+
+        //3 Get total num of wizards by hair color.
+        const wizardsByHairColor = wizards.reduce((acc,wizard) =>{
+            const color = wizard.hair_color;
+            if(acc[color]){
+                acc[color]++;
+            } else{
+                acc[color] = 1;
+            }
+            return acc;
+        },{});  
+        console.error("HELLO DR WEI, I AM AN ERROR. MEOW");
+        console.log(wizardsByHairColor);
 
         //***sort()***
         //1. Sort by height
-        
+        const wizardsSortedByHeight = wizards.sort((w1,w2) => w1.height -w2.height);
+        console.log(wizardsSortedByHeight);
         //2. Sort by name
-
+        const wizardsSortedByName = wizards.sort((w1,w2) =>{
+            if(w1.name < w2.name) return -1;
+            return 1;
+        });
+        console.log(wizardsSortedByName);
         //3. Sort by gender
-
+        const wizardsSortedByGender = wizards.sort((w1,w2) =>{
+            if(w1.gender === 'female') return -1;
+            return 1;
+        });
+        console.log(wizardsSortedByGender);
     </script>
 </head>
 
