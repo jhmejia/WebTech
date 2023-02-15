@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carousal</title>
+    <style>
+        .banner {
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <img id="img" class="banner" src="img/banner_1.jpg" width="100%">
+    <input type="button" id="back" value="Go Back">
+    <script>
+
+        var number = 1;
+        function fun() {
+            number++;
+            if (number > 3) {
+                number = 1;
+            }
+            var img = document.getElementById('img');
+            img.src = 'img/banner_' + number + '.jpg';
+        }
+
+        setInterval(fun, 3000);
+
+        var back = document.getElementById('back');
+
+        back.onclick = function () {
+            // history.back();
+            history.go(-1);
+        }
+
+    </script>
+</body>
+
+</html>

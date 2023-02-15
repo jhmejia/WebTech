@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+
+    <style>
+        table {
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,
+        th {
+            text-align: center;
+            border: 1px solid;
+        }
+
+        div {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <input type="text" id="id" placeholder="ID">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="gender" placeholder="Gender">
+        <input type="button" value="Add" id="btn_add">
+    </div>
+
+    <table>
+        <caption>Hogwarts Student Info Table</caption>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Operaton</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Harry Potter</td>
+                <td>M</td>
+                <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Draco Malfoy</td>
+                <td>M</td>
+                <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Hermione Granger</td>
+                <td>F</td>
+                <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        /*
+                1.Add a new student：
+                    1. bind onclick event to add button
+                    2. get the contents from the three input boxes
+                    3. create three td elements
+                    4. create one tr element
+                    5. add the three tds to the new tr
+                    6. add the new tr to the tbody element
+                2.Delete a student：
+                    1.Which delete is clicked?
+                        <a href="javascript:void(0);" onclick="delTr(this);" >Delete</a>
+                    2.How to delete？
+                        removeChild()
+         */
+
+       
+
+        //The second way to append a row: using innerHTML
+        
+
+
+    </script>
+
+</body>
+
+</html>
