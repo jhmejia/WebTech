@@ -38,19 +38,49 @@
     light.src = "img/on.gif";
     //1.get the element with id "title"
 
+    let title = document.getElementById("title");
+    
+
     //2.Change the content of the heading
 
+    title.innerHTML = "JS is hard!"
 
     // select element whose class is "container"
 
+    function changeBackgroundColor() {
+            let heading1 = document.querySelector("h1");
+            console.log(heading1)
+            heading1.classList.add("bg-purple"); // Add a class to h1
+    }
 
     // select element whose tag is h1
 
+    function changeListContent()
+
+        // Manipulate the DOM:
+        const unorderedList = document.querySelector('.items')
+
+        console.log(unorderedList.firstElementChild)
+
+        unorderedList.firstElementChild.textContent = "Hello "
+        unorderedList.children[1].innerText = "Brad"
+        unorderedList.lastElementChild.innerHTML = "<h1>Hello</h1>"
 
     // Multiple Element Selectors
 
+    let light = document.getElementById("light");
+    console.log(light);
 
-	// Manipulate the DOM:
+    let section = document.querySelector(".container")
+    console.log(section)
+
+    // Multiple elements yo.
+
+    const itemList = document.querySelectorAll(".item")
+    console.log(itemList)
+    itemList.forEach((item) => console.log(item))
+
+	
 
 </script>
 
