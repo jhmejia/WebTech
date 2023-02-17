@@ -20,7 +20,24 @@
 
     <script>
 
-       
+       function fun() {
+        alert ("LIGHT 1 IS BEING CLICKED AHHHH");
+       }
+
+       function fun2() {
+        alert ("LIGHT 2 IS BEING CLICKED AHHHH");
+        }
+
+        let light2 = document.getElementById("light2");
+        light2.onclick = fun2;
+
+        let light3 = document.getElementById("light3").addEventListener("click", (event) => {
+            alert("LIGHT 3 IS BEING CLICKED AHHHH");
+            console.log(event);
+            console.log(event.target);
+
+
+        });
 
         // Second way
         //1.get light2 element
