@@ -12,7 +12,18 @@
     <input type="button" id="btn_remove" value="Remove Attribute">
 
     <script>
+        let btn_set = document.getElementById('btn_set');
 
+        btn_set.onclick = function () {
+            let element_a = document.querySelector('a');
+            element_a.setAttribute('href', 'https://www.google.com');
+        }
+
+        let btn_remove = document.getElementById('btn_remove');
+        btn_remove.onclick = function () {
+            let element_a = document.querySelector('a');
+            element_a.removeAttribute('href');
+        }
     </script>
 </body>
 

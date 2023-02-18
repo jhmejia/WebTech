@@ -90,7 +90,28 @@
 
         //The second way to append a row: using innerHTML
         
+        document.getElementById('btn_add').onclick = function () {
+            let id = document.getElementById('id').value;
+            let name = document.getElementById('name').value;
+            let gender = document.getElementById('gender').value;
 
+            let tbody = document.querySelector('tbody');
+
+            tbody.innerHTML += 
+                `<tr>
+                    <td>${id}</td>
+                    <td>${name}</td>
+                    <td>${gender}</td>
+                    <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+                </tr>`;
+
+        }
+
+        function delTr(obj) {
+            let tbody = obj.parentNode.parentNode.parentNode;
+            let tr = obj.parentNode.parentNode;
+            tbody.removeChild(tr);
+        }
 
     </script>
 

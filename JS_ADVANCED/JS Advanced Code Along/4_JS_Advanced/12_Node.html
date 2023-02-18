@@ -35,6 +35,22 @@
     <a href="javascript:void(0);" id="remove">Remove child node</a>
     <a href="javascript:void(0);" id="add">Add child node</a>
     <script>
+        let element_remove = document.getElementById('remove');
+
+        element_remove.onclick = function () {
+            let div1 = document.getElementById('div1');
+            //let div2 = document.getElementById('div2');
+            div1.removeChild(div1.lastElementChild);
+        }
+
+        let element_add = document.getElementById('add');
+        element_add.onclick = function () {
+            let div1 = document.getElementById('div1');
+            let div3 = document.createElement('div');
+            div3.id = 'div3';
+            div3.innerHTML = 'div3';
+            div1.appendChild(div3);
+        }
 
     </script>
 </body>
