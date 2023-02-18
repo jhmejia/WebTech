@@ -34,12 +34,104 @@
     </style>
 
     <script>
+        /* 
+            1. Select all:
+            * Get all checkboxes. 
+            * Iterate through the list of checkboxes, set everyones checked to true.
+            2. Deselect all:
+            * Get all the checkboxed on the page
+            * Iterate through the list of checkboxes, set everyones checked to false.
+            3. Invert Select:
+            * Get all the checkboxes on the page
+            * Iterate through the list of checkboxes, set everyones checked to the opposite of what it is.
+        */  
+
+        //do a function executed right after the page is loaded. We will bing events to sevral html elements. 
+
+
+        window.onload = function() {
+
+            //1. select all. 
+            document.getElementById('selectAll').onclick = function () {
+                let cbs = document.querySelectorAll('[name="cb"]');
+                cbs.forEach(cb => cb.checked = true);
+            }
+            //2. Deselect All
+            document.getElementById('unSelectAll').onclick = function () {
+                let cbs = document.querySelectorAll('[name="cb"]');
+                cbs.forEach(cb => cb.checked = false);
+            }
+            //3. Invert Select
+            document.getElementById('invertSelect').onclick = function () {
+                let cbs = document.querySelectorAll('[name="cb"]');
+                cbs.forEach(cb => cb.checked = !cb.checked);
+            }
+
+            // 4. Select all by click the very first checkbox. 
+            document.getElementById('firstCb').onclick = function() {
+                let cbs = document.querySelectorAll('[name="cb"]');
+                cbs.forEach(cb => cb.checked = this.checked);
+            }
+
+            //5. Add mouse over and mouse out effect to each tr
+            let trs = document.querySelectorAll('tr');
+            trs.forEach(tr => {
+                tr.onmouseover = function() {
+                    this.className = 'over';
+                }
+                tr.onmouseout = function() {
+                    this.className = 'out';
+                }
+            });
+
+        }
 
     </script>
 
 </head>
 
 <body>
+    <table>
+        <caption> Student Info Table</caption>
+        <tr>
+            <th> <input type="checkbox" id="firstCb"></th>
+            <th> ID</th>
+            <th> Name</th>
+            <th> Gender</th>
+            <th> Operation </th>
+        </tr>
+
+
+        <tr>
+            <td><input type = "checkbox" name = "cb"></td>
+            <td> 1</td>
+            <td> Harry Potter</td>
+            <td> M </td>
+            <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+        </tr>
+        <tr>
+            <td><input type = "checkbox" name = "cb"></td>
+            <td> 2</td>
+            <td> Draco Malfoy</td>
+            <td> M </td>
+            <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+        </tr>
+        <tr>
+            <td><input type = "checkbox" name = "cb"></td>
+            <td> 3</td>
+            <td> Hermione Granger</td>
+            <td> F </td>
+            <td><a href="javascript:void(0);" onclick="delTr(this);">Delete</a></td>
+        </tr>
+
+
+    </table>
+    <div>
+        <input type = "button" id = "selectAll" value = "Select All">
+        <input type = "button" id = "unSelectAll" value = "Unselect All">
+        <input type = "button" id = "invertSelect" value = "Invert Select">
+
+    </div>
 
 
 </body>
