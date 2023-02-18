@@ -12,7 +12,20 @@
 
     <input type="button" id="google" value="Go to Google">
     <script>
+        //reload
 
+        let btn = document.getElementById("btn");
+        btn.onclick = function () {
+            location.reload();
+        }
+
+
+        let href = location.href;
+
+        let google = document.getElementById("google");
+        google.onclick = function () {
+            location.href = "https://www.google.com";
+        }
 
     </script>
 </body>

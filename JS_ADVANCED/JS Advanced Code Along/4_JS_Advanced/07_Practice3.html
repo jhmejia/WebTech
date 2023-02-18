@@ -24,7 +24,18 @@
 
 
     <script>
+        let second = 5;
+        let countdown = document.elementByID('countdown');
+        
+        function updateCountingDown() {
+            second--;
+            if (second <= 0) {
+                location.href = 'https://www.google.com';
+            }
+            countdown.innerHTML = second;
+        }
 
+        setInterval(updateCountingDown, 1000);
 
     </script>
 </body>

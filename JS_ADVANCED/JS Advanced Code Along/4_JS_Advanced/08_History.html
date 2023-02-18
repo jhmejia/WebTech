@@ -12,7 +12,21 @@
     <a href="09_History2.html">09_History2</a>
     <input type="button" id="forward" value="Forward">
     <script>
+        let btn = document.getElementById('btn');
+        let forward = document.getElementById('forward');
 
+        btn.onclick = function () {
+            console.log(history.length);
+            console.log(history.state);
+            console.log(history.state.name);
+            console.log(history.state.age);
+            const length = history.length;
+            alert(length);
+        }
+
+        forward.onclick = function () {
+            history.forward();
+        }
     </script>
 
 </body>
