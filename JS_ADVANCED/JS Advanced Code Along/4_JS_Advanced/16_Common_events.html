@@ -7,6 +7,42 @@
 
     <script>
 
+        //onload event
+        window.onload = function () {
+            document.getElementById('username').onblur = function () {
+                alert("Lose focus...");
+            }
+
+            document.getElementById('username').onmouseover = function (event) {
+                alert("Mouse over...");
+            }
+
+            document.getElementById('username').onmousedown = function (event) {
+                //alert("mouse down");
+                alert(event.button);
+            }
+
+            document.getElementById('username').onkeydown = function (event) {
+                if (event.keyCode == 13)
+                {
+                    alert("Submit form")
+                }
+            }
+
+            document.getElementById('city').onchange = function (event) {
+                alert("City changed");
+            }
+
+            document.getElementById('form').onsubmit = function (event) {
+                //Validate form input ..... 
+
+                var flag = true;
+                return flag;
+            }
+        }
+        function checkForm() {
+            return true;
+        }
     </script>
 
 </head>

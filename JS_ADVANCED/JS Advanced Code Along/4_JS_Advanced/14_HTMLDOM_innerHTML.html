@@ -17,8 +17,10 @@
   <script>
     function myFunction() {
       let x = document.getElementById('myP').innerHTML;
-      document.getElementById('demo').innerHTML = x;
+      document.getElementById('demo').innerHTML += x;
       //try to change = to += and see what happens
+
+      // When I change = to += it adds the text to the bottom of the paragraph
     }
   </script>
 

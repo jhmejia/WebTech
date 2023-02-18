@@ -36,7 +36,27 @@
     </p>
 
     <script>
+        let p1 = document.getElementById('p1');
+        p1.onclick = function () {
+            p1.style.visibility = 'hidden';
+        }
 
+        //2nd way to do it
+
+        let p2 = document.getElementById('p2');
+        p2.onclick = function () {
+            console.log(p2.className)
+            p2.className += 'hidden';
+            console.log(p2.className)
+        }
+
+        let p3 = document.getElementById('p3');
+
+        p3.onclick = function () {
+            console.log(p3.classList)
+            p3.classList.add('big');
+            console.log(p3.className)
+        }
     </script>
 
 </body>
