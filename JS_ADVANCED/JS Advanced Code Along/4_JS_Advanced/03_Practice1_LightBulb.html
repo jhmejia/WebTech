@@ -14,10 +14,22 @@
     <script>
 
         //1.Get img element
-       
+        let light = document.getElementById("light");
+
+        let flag = false;
 
         //2.Bind event handler
         
+        light.onclick = function () {
+            if (flag) {
+                light.setAttribute("src", "img/off.gif");
+
+                flag = false;
+            } else {
+                light.setAttribute("src", "img/on.gif");
+                flag = true;
+            }
+        }
     </script>
 </body>
 
