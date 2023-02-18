@@ -25,6 +25,20 @@
                 3.define a timer to call the above function every 3 sec
          */
 
+         let number = 1;
+         function switchImage() {
+            number ++;
+
+            if (number > 4) {
+                number = 1;
+            }
+
+            let img = document.getElementById("img");
+
+            img.src = 'img/banner_' + number + '.jpg';
+         }
+
+            setInterval(switchImage, 3000);
 
     </script>
 </body>

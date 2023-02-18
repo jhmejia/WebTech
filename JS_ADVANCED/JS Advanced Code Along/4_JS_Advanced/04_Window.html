@@ -13,7 +13,43 @@
 
     <script>
         
-        print(hello world)
+        alert("Hello World");
+        window.alert('hello a')
+
+
+        var flag = confirm("Are you sure you want to delete this file?");
+        if (window.flag)
+            alert("The file was deleted.");
+        else
+            alert(" Be careful, fool!");
+
+        let result = prompt("Please type your first name");
+        alert(result);
+
+        let openBtn = document.getElementById("openBtn");
+
+        let newWindow;
+        openBtn.onclick = function () {
+            newWindow = window.open("https://www.google.com", "newWindow", "width=400,height=400");
+        }
+
+        let closeBtn = document.getElementById("closeBtn");
+
+        closeBtn.onclick = function () {
+            newWindow.close();
+        }
+
+        setTimeout('fun();', 2000);
+
+        let id = setTimeout(fun, 2000);
+        clearTimeout(id);
+
+        function fun() {
+            alert(' BOOM, BOOM, BOOM. I want to be a billionaire so frickin bad, buy all of the things I never had.')
+        }
+
+        let id2 = setInterval(fun, 2000);
+        clearInterval(id2);
     </script>
 </body>
 
