@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+
+    <style>
+      #leftNames,
+      #btn,
+      #rightNames {
+        float: left;
+        width: 100px;
+        height: 300px;
+      }
+
+      #toRight,
+      #toLeft {
+        margin-top: 100px;
+        margin-left: 30px;
+        width: 50px;
+      }
+
+      .border {
+        height: 500px;
+        padding: 100px;
+      }
+    </style>
+
+    <script>
+      // Write your code here
+    </script>
+  </head>
+
+  <body>
+    <h1>Select names and move them to left or right</h1>
+    <div class="border">
+      <select id="leftNames" multiple="multiple">
+        <option>Harry</option>
+        <option>Jim</option>
+        <option>John</option>
+        <option>Billy</option>
+      </select>
+      <div id="btn">
+        <input type="button" id="toRight" value="-->" /><br />
+        <input type="button" id="toLeft" value="<--" />
+      </div>
+
+      <select id="rightNames" multiple="multiple">
+        <option>Marry</option>
+      </select>
+    </div>
+  </body>
+</html>
