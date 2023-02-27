@@ -34,6 +34,33 @@
         "./img/weedle.png"
       ];
       // Write you code here
+      var timer;
+      var img = document.getElementById("img");
+      var thumbnail = document.getElementById("thumbnail");
+      var startBtn = document.getElementById("startBtn");
+      var stopBtn = document.getElementById("stopBtn");
+      startBtn.addEventListener("click", function() {
+        //Change thumbnail image rapidly
+        timer = setInterval(function() {
+          thumbnail.src = imgs[Math.floor(Math.random() * imgs.length)];
+        }, 100);
+        
+     
+      });
+      stopBtn.addEventListener("click", function() {
+        clearInterval(timer);
+        //Set the "img" to the image in the thumbnail
+        img.src = thumbnail.src;
+
+      });
+
+      //Have the timer going at the start
+      timer = setInterval(function() {
+        thumbnail.src = imgs[Math.floor(Math.random() * imgs.length)];
+      }, 100);
+
+      
+
     </script>
     <style>
       .container {
