@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Emoji</title>
-    <style type="text/css">
-      * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<title>Emoji</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
 
-      .emoji {
-        margin: 50px;
-      }
+			.emoji {
+				margin: 50px;
+			}
 
-      ul {
-        overflow: hidden;
-      }
+			ul {
+				overflow: hidden;
+			}
 
-      li {
-        float: left;
-        width: 48px;
-        height: 48px;
-        cursor: pointer;
-      }
+			li {
+				float: left;
+				width: 48px;
+				height: 48px;
+				cursor: pointer;
+			}
 
-      .emoji img {
-        cursor: pointer;
-      }
-    </style>
-    <script>
-      // Write your code here
-      
-    </script>
-  </head>
+			.emoji img {
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			const emojis = document.querySelector(".emoji ul").children;
 
-  <body>
-    <div class="emoji">
-      <ul>
-        <li><img src="img/01.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/02.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/03.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/04.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/05.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/06.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/07.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/08.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/09.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/10.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/11.gif" height="22" width="22" alt="" /></li>
-        <li><img src="img/12.gif" height="22" width="22" alt="" /></li>
-      </ul>
-      <p class="word">
-        <strong>Please comment by clicking the emoji above: </strong>
-        <img src="img/12.gif" height="22" width="22" alt="" />
-      </p>
-    </div>
-  </body>
+      console.log(emojis);
+
+			let comments = document.querySelector(".word");
+
+			emojis.forEach((emoji) => {
+				console.log(this.getAttribute("src"));
+
+				emoji.addEventListener("click", function () {
+					const currentEmojisrc = this.getAttribute("src");
+
+					comments.innerText += `<img src="${currentEmojisrc}" height="22" width="22" alt="" />`;
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="emoji">
+			<ul>
+				<li><img src="img/01.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/02.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/03.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/04.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/05.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/06.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/07.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/08.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/09.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/10.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/11.gif" height="22" width="22" alt="" /></li>
+				<li><img src="img/12.gif" height="22" width="22" alt="" /></li>
+			</ul>
+			<p class="word">
+				<strong>Please comment by clicking the emoji above: </strong>
+				<img src="img/12.gif" height="22" width="22" alt="" />
+			</p>
+		</div>
+	</body>
 </html>
