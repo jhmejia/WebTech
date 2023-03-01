@@ -39,7 +39,7 @@
 
 
 
-.restart-button {
+#restart-button {
     /* The restart button is a flexbox with the text and image centered */
     display: flex;
     flex-direction: column;
@@ -51,4 +51,9 @@
     margin: 1px;
     border-radius: 100px;
 
+}
+
+#results {
+    /* make it invisible */
+    display: none;
 }
