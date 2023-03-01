@@ -20,13 +20,13 @@
       }
     </style>
   </head>
-  <!-- Showing users' information in a table -->
+
   <body>
     <div class="container">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">User Management</h5>
-          <button type="button" class="btn btn-primary">Sort by name</button>
+          <button type="button" class="btn btn-primary" id="sort-btn">Sort by name</button>
         </div>
       </div>
       <table class="table">
@@ -42,10 +42,57 @@
         <tbody id="userTableBody"></tbody>
       </table>
     </div>
-  </body>
 
-  <script>
-    let userList = []; // used to store the data
-    // Write your code here...
-  </script>
+    <script>
+      let userList = [];
+
+      //get user info by fetching 
+      const getUsers = () => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+          .then((response) => response.json())
+          .then((data) => {
+
+            //store user info in renderusertable
+            userList = data;
+            renderUserTable(userList);
+          })
+          .catch((error) => console.log('Error:', error));
+      };
+
+      //process renderusertable
+      const renderUserTable = (users) => {
+
+        const tableBody = document.getElementById('userTableBody');
+        tableBody.innerHTML = '';
+
+
+        users.forEach((user) => {
+          const email = user.email;
+          const domain = email.substring(email.lastIndexOf('.') + 1);
+          const badgeClass = domain === 'biz' ? 'bg-success' : 'bg-danger';
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td><span class="badge ${badgeClass}">${user.email}</span></td>
+            <td>${user.website}</td>
+            <td>${user.company.name}</td>
+          `;
+          
+          tableBody.appendChild(row);
+
+        });
+      };
+
+      const sortUsersByName = () => {
+        userList.sort((a, b) => a.name.localeCompare(b.name));
+        renderUserTable(userList);
+      };
+
+      document.getElementById('sort-btn').addEventListener('click', sortUsersByName);
+
+      getUsers();
+    </script>
+  </body>
 </html>

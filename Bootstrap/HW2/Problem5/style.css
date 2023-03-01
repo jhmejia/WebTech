@@ -38,9 +38,9 @@
 }
 
 
-
+/* Restart Button */
 #restart-button {
-    /* The restart button is a flexbox with the text and image centered */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +54,6 @@
 }
 
 #results {
-    /* make it invisible */
+    /* The results is just used for data storage. I don't want it to be visible */
     display: none;
 }

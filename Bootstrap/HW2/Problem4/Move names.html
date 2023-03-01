@@ -27,42 +27,33 @@
 		</style>
 
 		<script>
-      
-			// Get references to the left and right select boxes
-			const leftBox = document.getElementById("leftNames");
-			const rightBox = document.getElementById("rightNames");
+			// Write your code here
 
-      //PRint out all elements in the left box
-      console.log(leftBox)
+			//First you need to get the elements from the DOM
+			window.addEventListener("DOMContentLoaded", () => {
+				// get the elements
+				const leftNames = document.getElementById("leftNames");
+				const rightNames = document.getElementById("rightNames");
+				const toRightBtn = document.getElementById("toRight");
+				const toLeftBtn = document.getElementById("toLeft");
 
-
-
-
-			// Get references to the toRight and toLeft buttons
-			const toRightBtn = document.getElementById("toRight");
-
-      console.log(toRightBtn)
-			const toLeftBtn = document.getElementById("toLeft");
-
-			// Add click event listener to the toRight button
-			toRightBtn.addEventListener("click", () => {
-				// Get the selected options from the left select box
-				const selectedOptions = Array.from(leftBox.selectedOptions);
-
-				// Move the selected options to the right select box
-				selectedOptions.forEach((option) => {
-					rightBox.appendChild(option);
+				// add event listener to the toRight button
+				toRightBtn.addEventListener("click", () => {
+					for (let i = 0; i < leftNames.options.length; i++) {
+						if (leftNames.options[i].selected) {
+							rightNames.add(leftNames.options[i]);
+						}
+					}
 				});
-			});
 
-			// Add click event listener to the toLeft button
-			toLeftBtn.addEventListener("click", () => {
-				// Get the selected options from the right select box
-				const selectedOptions = Array.from(rightBox.selectedOptions);
-
-				// Move the selected options to the left select box
-				selectedOptions.forEach((option) => {
-					leftBox.appendChild(option);
+				// add event listener to the toLeft button
+				toLeftBtn.addEventListener("click", () => {
+					// Get the selected options from the right select box
+					for (let i = 0; i < rightNames.options.length; i++) {
+						if (rightNames.options[i].selected) {
+							leftNames.add(rightNames.options[i]);
+						}
+					}
 				});
 			});
 		</script>

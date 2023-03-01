@@ -1,95 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Random Picture Selector</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <script language="javascript" type="text/javascript">
-      var imgs = [
-        "./img/arbok.png",
-        "./img/bellsprout.png",
-        "./img/blastoise.png",
-        "./img/bulbasaur.png",
-        "./img/butterfree.png",
-        "./img/charmander.png",
-        "./img/clefable.png",
-        "./img/dugtrio.png",
-        "./img/golbat.png",
-        "./img/jigglypuff.png",
-        "./img/meowth.jpg",
-        "./img/nidoran.png",
-        "./img/ninetales.png",
-        "./img/onix.png",
-        "./img/parasect.png",
-        "./img/pidgeotto.png",
-        "./img/pidgey.png",
-        "./img/pikachu.png",
-        "./img/ponyta.png",
-        "./img/psyduck.png",
-        "./img/raticate.png",
-        "./img/venusaur.png",
-        "./img/weedle.png"
-      ];
-      // Write you code here
-      var timer;
-      var img = document.getElementById("img");
-      var thumbnail = document.getElementById("thumbnail");
-      var startBtn = document.getElementById("startBtn");
-      var stopBtn = document.getElementById("stopBtn");
-      startBtn.addEventListener("click", function() {
-        //Change thumbnail image rapidly
-        timer = setInterval(function() {
-          thumbnail.src = imgs[Math.floor(Math.random() * imgs.length)];
-        }, 100);
-        
-     
-      });
-      stopBtn.addEventListener("click", function() {
-        clearInterval(timer);
-        //Set the "img" to the image in the thumbnail
-        img.src = thumbnail.src;
+	<head>
+		<meta charset="UTF-8" />
+		<title>Random Picture Selector</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		/>
+		<script language="javascript" type="text/javascript">
+			var imgs = [
+				"./img/arbok.png",
+				"./img/bellsprout.png",
+				"./img/blastoise.png",
+				"./img/bulbasaur.png",
+				"./img/butterfree.png",
+				"./img/charmander.png",
+				"./img/clefable.png",
+				"./img/dugtrio.png",
+				"./img/golbat.png",
+				"./img/jigglypuff.png",
+				"./img/meowth.jpg",
+				"./img/nidoran.png",
+				"./img/ninetales.png",
+				"./img/onix.png",
+				"./img/parasect.png",
+				"./img/pidgeotto.png",
+				"./img/pidgey.png",
+				"./img/pikachu.png",
+				"./img/ponyta.png",
+				"./img/psyduck.png",
+				"./img/raticate.png",
+				"./img/venusaur.png",
+				"./img/weedle.png",
+			];
+			// Write you code here
+			// Get references to the HTML elements
 
-      });
+			window.addEventListener("DOMContentLoaded", () => {
+				var thumbnail = document.getElementById("thumbnail");
+				var img = document.getElementById("img");
+				// Get the start and stop buttons
+				var startBtn = document.getElementById("startBtn");
+				var stopBtn = document.getElementById("stopBtn");
 
-      //Have the timer going at the start
-      timer = setInterval(function() {
-        thumbnail.src = imgs[Math.floor(Math.random() * imgs.length)];
-      }, 100);
+				// Flag to check if loop
+				var isLooping = false;
 
-      
+				// Function to select a random image
 
-    </script>
-    <style>
-      .container {
-        margin-top: 20px;
-      }
-      button {
-        margin: 20px 10px 20px 0;
-      }
-    </style>
-  </head>
+				function selectRandomImage() {
+					// Generate a random index to select
+					var index = Math.floor(Math.random() * imgs.length);
 
-  <body>
-    <div class="container">
-      <div class="row center">
-        <!-- Thumbnail -->
-        <div style="border-style:dotted;height:160px; width: 170px;">
-          <img id="thumbnail" src="./img/psyduck.png" style="height:160px" />
-        </div>
-      </div>
-      <div class="row">
-        <button id="startBtn" class="btn btn-primary">Start</button>
-        <button id="stopBtn" class="btn btn-danger">Stop</button>
-      </div>
-      <div class="row">
-        <!-- Picture -->
-        <div style="border-style:double;width:400px">
-          <img id="img" src="./img/psyduck.png" width="400px" />
-        </div>
-      </div>
-    </div>
-  </body>
+					// Get the img and thumbnail elements
+					var img = document.getElementById("img");
+					var thumbnail = document.getElementById("thumbnail");
+
+					// set img and thumbnail to selected image
+					thumbnail.src = imgs[index];
+				}
+
+				//start button
+				startBtn.addEventListener("click", function () {
+          // Set the flag to true
+          isLooping = true;
+					// Disable the start button while looping
+					startBtn.disabled = true;
+					// Enable the stop button while looping
+					stopBtn.disabled = false;
+					
+
+					// Start the picture looping
+					var intervalId = setInterval(function () {
+						selectRandomImage();
+
+						if (!isLooping) {
+							// If the picture is not looping, exit the loop
+							clearInterval(intervalId);
+						}
+					}, 100);
+				});
+
+				// Add a click event listener to the stop button
+				stopBtn.addEventListener("click", function () {
+					startBtn.disabled = false;
+
+					stopBtn.disabled = true;
+
+					isLooping = false;
+				});
+			});
+		</script>
+
+		<style>
+			.container {
+				margin-top: 20px;
+			}
+			button {
+				margin: 20px 10px 20px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row center">
+				<!-- Thumbnail -->
+				<div style="border-style: dotted; height: 160px; width: 170px">
+					<img
+						id="thumbnail"
+						src="./img/psyduck.png"
+						style="height: 160px"
+					/>
+				</div>
+			</div>
+			<div class="row">
+				<button id="startBtn" class="btn btn-primary">Start</button>
+				<button id="stopBtn" class="btn btn-danger">Stop</button>
+			</div>
+			<div class="row">
+				<!-- Picture -->
+				<div style="border-style: double; width: 400px">
+					<img id="img" src="./img/psyduck.png" width="400px" />
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

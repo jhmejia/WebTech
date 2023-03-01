@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>Emoji</title>
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emoji</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
 
-			.emoji {
-				margin: 50px;
-			}
+      .emoji {
+        margin: 50px;
+      }
 
-			ul {
-				overflow: hidden;
-			}
+      ul {
+        overflow: hidden;
+      }
 
-			li {
-				float: left;
-				width: 48px;
-				height: 48px;
-				cursor: pointer;
-			}
+      li {
+        float: left;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
 
-			.emoji img {
-				cursor: pointer;
-			}
-		</style>
-		<script>
-			const emojis = document.querySelector(".emoji ul").children;
+      .emoji img {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      // Wait for the DOM to be ready
+      window.addEventListener("DOMContentLoaded", () => {
 
-      console.log(emojis);
+        //Get the elements from the DOM 
+        const emojiImages = document.querySelectorAll(".emoji li img");
+        const wordArea = document.querySelector(".word  img");
+        
+        //create clone to comment section whenever click the image
+        emojiImages.forEach((emojiImage) => {
+          emojiImage.addEventListener("click", () => {
 
-			let comments = document.querySelector(".word");
 
-			emojis.forEach((emoji) => {
-				console.log(this.getAttribute("src"));
+            //create clone
+            const selectedEmoji = emojiImage.cloneNode(true);
 
-				emoji.addEventListener("click", function () {
-					const currentEmojisrc = this.getAttribute("src");
+            //add the clone the comment area
+            wordArea.parentNode.appendChild(selectedEmoji, wordArea);
+          });
+        });
+      });
+    </script>
+  </head>
 
-					comments.innerText += `<img src="${currentEmojisrc}" height="22" width="22" alt="" />`;
-				});
-			});
-		</script>
-	</head>
-
-	<body>
-		<div class="emoji">
-			<ul>
-				<li><img src="img/01.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/02.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/03.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/04.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/05.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/06.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/07.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/08.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/09.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/10.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/11.gif" height="22" width="22" alt="" /></li>
-				<li><img src="img/12.gif" height="22" width="22" alt="" /></li>
-			</ul>
-			<p class="word">
-				<strong>Please comment by clicking the emoji above: </strong>
-				<img src="img/12.gif" height="22" width="22" alt="" />
-			</p>
-		</div>
-	</body>
+  <body>
+    <div class="emoji">
+      <ul>
+        <li><img src="img/01.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/02.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/03.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/04.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/05.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/06.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/07.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/08.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/09.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/10.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/11.gif" height="22" width="22" alt="" /></li>
+        <li><img src="img/12.gif" height="22" width="22" alt="" /></li>
+      </ul>
+      <p class="word">
+        <strong>Please comment by clicking the emoji above: </strong>
+        <img src="img/12.gif" height="22" width="22" alt="" />
+      </p>
+    </div>
+  </body>
 </html>
