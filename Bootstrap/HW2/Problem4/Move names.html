@@ -1,53 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title></title>
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
 
-    <style>
-      #leftNames,
-      #btn,
-      #rightNames {
-        float: left;
-        width: 100px;
-        height: 300px;
-      }
+		<style>
+			#leftNames,
+			#btn,
+			#rightNames {
+				float: left;
+				width: 100px;
+				height: 300px;
+			}
 
-      #toRight,
-      #toLeft {
-        margin-top: 100px;
-        margin-left: 30px;
-        width: 50px;
-      }
+			#toRight,
+			#toLeft {
+				margin-top: 100px;
+				margin-left: 30px;
+				width: 50px;
+			}
 
-      .border {
-        height: 500px;
-        padding: 100px;
-      }
-    </style>
+			.border {
+				height: 500px;
+				padding: 100px;
+			}
+		</style>
 
-    <script>
-      // Write your code here
-    </script>
-  </head>
+		<script>
+      
+			// Get references to the left and right select boxes
+			const leftBox = document.getElementById("leftNames");
+			const rightBox = document.getElementById("rightNames");
 
-  <body>
-    <h1>Select names and move them to left or right</h1>
-    <div class="border">
-      <select id="leftNames" multiple="multiple">
-        <option>Harry</option>
-        <option>Jim</option>
-        <option>John</option>
-        <option>Billy</option>
-      </select>
-      <div id="btn">
-        <input type="button" id="toRight" value="-->" /><br />
-        <input type="button" id="toLeft" value="<--" />
-      </div>
+      //PRint out all elements in the left box
+      console.log(leftBox)
 
-      <select id="rightNames" multiple="multiple">
-        <option>Marry</option>
-      </select>
-    </div>
-  </body>
+
+
+
+			// Get references to the toRight and toLeft buttons
+			const toRightBtn = document.getElementById("toRight");
+
+      console.log(toRightBtn)
+			const toLeftBtn = document.getElementById("toLeft");
+
+			// Add click event listener to the toRight button
+			toRightBtn.addEventListener("click", () => {
+				// Get the selected options from the left select box
+				const selectedOptions = Array.from(leftBox.selectedOptions);
+
+				// Move the selected options to the right select box
+				selectedOptions.forEach((option) => {
+					rightBox.appendChild(option);
+				});
+			});
+
+			// Add click event listener to the toLeft button
+			toLeftBtn.addEventListener("click", () => {
+				// Get the selected options from the right select box
+				const selectedOptions = Array.from(rightBox.selectedOptions);
+
+				// Move the selected options to the left select box
+				selectedOptions.forEach((option) => {
+					leftBox.appendChild(option);
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<h1>Select names and move them to left or right</h1>
+		<div class="border">
+			<select id="leftNames" multiple="multiple">
+				<option>Harry</option>
+				<option>Jim</option>
+				<option>John</option>
+				<option>Billy</option>
+			</select>
+			<div id="btn">
+				<input type="button" id="toRight" value="-->" /><br />
+				<input type="button" id="toLeft" value="<--" />
+			</div>
+
+			<select id="rightNames" multiple="multiple">
+				<option>Marry</option>
+			</select>
+		</div>
+	</body>
 </html>

@@ -1,2 +1,54 @@
 /* TODO(you): Write the CSS to finish the assignment! */
 
+.choice-grid {
+    /* 3x3 grid where the checkbox image is below the image */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*vertical gap is 10px*/
+    grid-row-gap: 20px;
+    /*horizontal gap is .8%*/
+    grid-column-gap: 0.8%;
+    justify-items: center;
+    align-items: center;
+    /* top and bottom margin is 20px */
+    margin: 20px 0;
+}
+
+.choice-grid > div {
+    /* Each grid cell is a flexbox with the image and checkbox centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.choice-grid > div > img {
+    /* The image is 100% of the width of the grid cell */
+    width: 100%;
+}
+
+.checked {
+    background-color: #cfe3ff;
+}
+
+.unchecked {
+    opacity: 0.6;
+}
+
+
+
+.restart-button {
+    /* The restart button is a flexbox with the text and image centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #cecece;
+    margin: 1px;
+    border-radius: 100px;
+
+}
