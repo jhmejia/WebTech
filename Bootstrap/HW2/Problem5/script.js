@@ -163,3 +163,14 @@ restart.addEventListener("click", function () {
    
 });
 
+
+var button = document.getElementById("restart-button");
+button.addEventListener("mouseover", function () {
+    this.style.backgroundColor = "#E0E0E0";
+}
+);
+
+button.addEventListener("mouseout", function () {
+    this.style.backgroundColor = "#cecece";
+}
+);
