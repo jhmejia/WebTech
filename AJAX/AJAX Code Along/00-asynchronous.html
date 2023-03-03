@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asynchronous function calls</title>
+  </head>
+  <body>
+    <script>
+      // I am making four AJAX calls using fetch API one by one
+      // 1. The four calls are executed “asynchronously,” as it starts running instantly, but finishes later.
+      //    If there’s any code below fetch(), the control flow doesn’t wait until fetch() is finished.
+      // 2. Since they are async, we cannot guarantee which AJAX request finishes first.
+      //    In other words, every time we execute this code, we may get results in different order.
+      // Go ahead and refresh the page multiple times and compare the console logs.
+
+      console.log('This is the very first line');
+
+      //first ajax call
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json));
+
+
+      console.log(
+        'this is a line between the first and second ajax call'
+      );
+
+      //second AJAX request
+      fetch ('https://jsonplaceholder.typicode.com/todos/2')
+        .then(response => response.json())
+        .then(json => console.log(json));
+
+      fetch ('https://jsonplaceholder.typicode.com/todos/3')
+        .then(response => response.json())
+        .then(json => console.log(json));
+
+      fetch ('https://jsonplaceholder.typicode.com/todos/4')
+        .then(response => response.json())
+        .then(json => console.log(json));
+
+      console.log("This is the very last line")
+    </script>
+  </body>
+</html>

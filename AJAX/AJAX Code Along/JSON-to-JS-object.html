@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Converting JSON String into Javascript Object</h2>
+    <b>JSON String :</b>
+    <p id="demo"></p>
+    <b>Use of Javascript object :</b>
+    <p id="demo1"></p>
+
+    <script>
+      let jsonString =
+        '{ "name":"Brendan Eich","designerof":"Javascript","bornin":"1961" }';
+
+      // Here we convert JSON string to a JS object
+      let obj = JSON.parse(jsonString);
+
+      document.getElementById('demo').innerHTML = jsonString;
+
+      document.getElementById('demo1').innerHTML =
+        obj.name +
+        ', who was born in ' +
+        obj.bornin +
+        ', was the designer of ' +
+        obj.designerof;
+    </script>
+  </body>
+</html>
