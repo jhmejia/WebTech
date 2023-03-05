@@ -18,7 +18,31 @@
       //   - request method
       //  fetch() returns a Promise object. A Promise object has then() method which takes a callback function as input.
 
-      
+      fetch('https://jsonplaceholder.typicode.com/todos/1', { method: 'GET'})
+        .then(function (response) {
+          console.log(response); //response is a Response object. need to convert it to JSON
+          return response.json();
+        })
+
+        .then(function (data) {
+          console.log(data);
+        })
+        
+        .catch(function (error) {
+          // error handling
+        });
+
+        // Lets break the above code into two parts, they are equivalent
+        let whenPostsLoaded = fetch('https://jsonplaceholder.typicode.com/todos/1', { method: 'GET'});
+
+
+        whenPostsLoaded.then(function (response) {
+          console.log(response); //response is a Response object. need to convert it to JSON
+          return response.json();
+        })
+        .then (function (data) {
+          console.log(data);
+        })
 
       
     </script>
