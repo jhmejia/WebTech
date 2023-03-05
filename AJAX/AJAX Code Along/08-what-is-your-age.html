@@ -6,7 +6,35 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
-      
+      window.onload = function () {
+        document.getElementById('name').onblur = function () {
+          let name = this.value;
+
+          if (name) {
+            axios
+              .get('https://api.agify.io/', {
+                params: {
+                  name, // name: name. ES6 syntax
+                },
+              })
+              .then(function (response) {
+                console.log(response.data);
+                let predictedAge = document.getElementById('predictedAge');
+
+                predictedAge.style.color = 'purple';
+
+                if (response.data.age) {
+                  predictedAge.innerHTML = `Ummm, your age is ${response.data.age}`;
+                } else {
+                  predictedAge.innerHTML = `Au-oh, I cannot guess your age`;
+                }
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          }
+        }
+      };
     </script>
   </head>
   <body>

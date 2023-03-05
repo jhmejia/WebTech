@@ -21,7 +21,16 @@
         });
 
       // axios sends GET request to the server
-      
+      axios // axios is a promise-based library
+        .get('https://jsonplaceholder.typicode.com/todos/1')
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+
     </script>
   </body>
 </html>

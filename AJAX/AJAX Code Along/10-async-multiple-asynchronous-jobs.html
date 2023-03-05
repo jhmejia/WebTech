@@ -30,6 +30,17 @@
       async/await to handle multiple async jobs
       async and await makes code much simpler and easier to understand — no more .then() blocks everywhere!
     */
+        async function queryData() {
+          const response1 = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+          console.log(response1.data);
+          const response2 = await axios.get('https://jsonplaceholder.typicode.com/todos/2');
+          console.log(response2.data);
+          const response3 = await axios.get('https://jsonplaceholder.typicode.com/todos/3');
+          console.log(response3.data);
+          const response4 = await axios.get('https://jsonplaceholder.typicode.com/todos/4');
+          console.log(response4.data);
+        }
+        queryData();
       
     </script>
   </body>

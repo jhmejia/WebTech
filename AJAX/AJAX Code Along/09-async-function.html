@@ -15,10 +15,23 @@
       // Task: request all todos from server side and assign to variable todos
       let todos = [];
       // Approach 1: not using async and await
-      
+      axios
+        .get('https://jsonplaceholder.typicode.com/todos')
+        .then(function (response) {
+          todos = response.data;
+          console.log(todos);
+        });
 
       // Approach 2: Using async and await, this is equivalent to above code snippet
      
+      async function getTodoList() {
+        const response = await axios.get(
+          'https://jsonplaceholder.typicode.com/todos'
+        );
+        todos = response.data;
+        console.log(todos);
+      }
+      getTodoList();
     </script>
   </body>
 </html>

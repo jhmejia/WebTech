@@ -7,6 +7,24 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
+
+      //set ghlobal axios defaults
+
+      //complete url is https://jsonplaceholder.typicode.com/todos/1
+      //set the base url
+      axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+
+      //set the default headers
+      axios.defaults.headers.common['Authorization'] = 'EHJ78U9I0UJHND';
+      axios.defaults.headers.post['Content-Type'] = 
+      'application/x-www-form-urlencoded';
+
+      //axios GET request
+      axios
+        .get('/todos/1')
+        .then(function (response) {
+          console.log(response.data.title);
+        });
       
     </script>
   </body>

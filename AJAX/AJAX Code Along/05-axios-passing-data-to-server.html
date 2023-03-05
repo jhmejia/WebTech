@@ -15,7 +15,78 @@
           Wants to know the order of params of each axios API? Check this out https://axios-http.com/docs/api_intro
       */
 
-      
+
+      //axios GET request
+      axios
+        .get('https://localhostL8080/products?prodId=1')
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+      //alternative axios GET request
+      axios
+        .get('https://localhostL8080/products', {
+          params: {
+            prodId: 1,
+          },
+        })
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+      axios
+        .get('https://jsonplaceholder.typicode.com/todos/1')
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+      axios
+        .delete('jsonplaceholder.typicode.com/todos/1')
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+
+      //axios POST request (with params, no need to use JSON.stringify, yeah!
+
+      axios
+        .post(
+          'https://jsonplaceholder.typicode.com/todos',
+          {
+            userID: 1,
+            title: 'Finish Web Tech HW 2',
+            completed: false,
+          },
+          {
+            headers: { 'X-requested-With': 'XMLHttpRequest' }}
+        )
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+      //axios put request
+      axios
+        .put(
+          'https://jsonplaceholder.typicode.com/todos/1',
+          {
+            userID: 1,
+            title: 'Finish Web Tech HW 2',
+            completed: true,
+          })
+        .then(function (response) {
+          console.log(response.data);
+        });
+
+        //start multiple axios requests
+        function getTodoByID(todoId) {
+          return axios.get('https://jsonplaceholder.typicode.com/todos/' + todoId);
+        }
+
+        Promise.all([getTodoByID(1), getTodoByID(2), getTodoByID(3)]).then(
+          (todos) => {
+            console.log(todos);
+          }
+        );
     </script>
   </body>
 </html>
