@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        v-bind:style="{border: borderStyle, width: widthStyle, height: heightStyle}"
+      ></div>
+      <div v-bind:style="objStyles"></div>
+      <div v-bind:style="[objStyles, overrideStyles]"></div>
+      <button v-on:click="handle">Toggle</button>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+      /*
+      v-bind style attribute:
+    */
+      const vm = Vue.createApp({
+        data() {
+          return {
+            borderStyle: '1px solid blue',
+            widthStyle: '100px',
+            heightStyle: '200px',
+            objStyles: {
+              border: '1px solid green',
+              width: '200px',
+              height: '100px',
+            },
+            overrideStyles: {
+              border: '5px solid orange',
+              backgroundColor: 'blue',
+            },
+          };
+        },
+        methods: {
+          handle: function () {
+            this.heightStyle = '100px';
+            this.objStyles.width = '100px';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

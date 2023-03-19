@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>v-html and v-text</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--v-html and v-text corresponds to innerText and innerHTML-->
+      <div v-html="message"></div>
+      <div v-text="message"></div>
+    </div>
+  </body>
+  <script>
+    const vm = Vue.createApp({
+      data() {
+        return {
+          message: '<h1>Hello Vue!</h1>',
+        };
+      },
+    }).mount('#app');
+  </script>
+</html>

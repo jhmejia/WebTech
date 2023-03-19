@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V-model</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h4>{{ msg }}</h4>
+
+      <!-- v-bind can only bind data in one direction Model -> V, not the other direction  -->
+      <!-- <input type="text" v-bind:value="msg" style="width:100%;"> -->
+
+      <!-- v-model can bind data in both directions: Model <-> V -->
+      <!-- Caveat: v-model can only be used in form elements -->
+      <!-- input(radio, text, address, email....)   select    checkbox   textarea   -->
+      <input type="text" style="width: 100%" v-model="msg" />
+    </div>
+
+    <script>
+      const vm = Vue.createApp({
+        data() {
+          return {
+            msg: 'I am the message!',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

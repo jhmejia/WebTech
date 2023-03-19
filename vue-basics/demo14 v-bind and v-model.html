@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>What is indeed v-model?</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{msg}}</div>
+      Using v-model:
+      <input type="text" v-model="msg" />
+      <br />
+      Using v-bind and v-on:input
+      <input type="text" :value="msg" @input="process($event)" />
+
+      <!-- The above two inputs are equivalent -->
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+      /*
+      v-model = v-bind + v-on:input event
+    */
+      const vm = Vue.createApp({
+        data() {
+          return {
+            msg: 'hello',
+          };
+        },
+        methods: {
+          process: function (event) {
+            // Use the latest value in input box to overwrite msg in data object
+            this.msg = event.target.value;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

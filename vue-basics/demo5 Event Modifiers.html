@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Modifiers</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{ num }}</div>
+      <div style="border: 1px solid red" @click="fun1">
+        <button @click.stop="fun2">Increase By One</button>
+      </div>
+      <div>
+        <a href="http://www.google.com" @click.prevent="fun3">Google</a>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

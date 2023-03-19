@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Key Modifiers</title>
+
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" @keydown="fun" />
+      <input type="text" @keydown="fun1" />
+      <input type="text" @keydown="fun2" />
+    </div>
+  </body>
+  <script>
+    const vm = Vue.createApp({
+      methods: {
+        fun: function () {
+          alert('You pressed Enter key');
+        },
+        fun1: function () {
+          alert('You pressed Down key');
+        },
+        fun2: function () {
+          alert('You pressed Space key');
+        },
+      },
+    }).mount('#app');
+  </script>
+</html>

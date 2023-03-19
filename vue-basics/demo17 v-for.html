@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>v-for</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const vm = Vue.createApp({
+      data() {
+        return {
+          product: {
+            id: 1001,
+            name: 'iPhone 11',
+            price: 999.99,
+          },
+        };
+      },
+    }).mount('#app');
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>v-if and v-show</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+  <body>
+    <div id="app">
+      <span v-if="flag">Hello v-if!</span>
+      <hr />
+      <span v-show="flag">Hello v-show!</span>
+      <button @click="toggle">Toggle</button>
+    </div>
+  </body>
+  <script>
+    const vm = Vue.createApp({
+      data() {
+        return {
+          flag: true,
+        };
+      },
+      methods: {
+        toggle: function () {
+          this.flag = !this.flag;
+        },
+      },
+    }).mount('#app');
+  </script>
+</html>

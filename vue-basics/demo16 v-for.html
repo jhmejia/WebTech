@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>v-for</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    const vm = Vue.createApp({
+      data() {
+        return {
+          students: ['Harry', 'John', 'Ron', 'Billy', 'Ranette'],
+        };
+      },
+    }).mount('#app');
+  </script>
+</html>
