@@ -3,9 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <title>v-on:keydown</title>
-    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
-  <body></body>
-  <script></script>
+  <body>
+    <div id = "app">
+      Please only type in numbers: 
+      <input type = "text" @keydown = "func($event)" />
+
+    </div>
+
+  </body>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      methods: {
+        func: function(event) {
+          let keyCode = event.keyCode
+          //If keycode is a number
+          if (keycode < 48 || keycode > 57) {
+            //Prevent default
+            event.preventDefault()
+          }
+        }
+      }
+    })
+  </script>
 </html>

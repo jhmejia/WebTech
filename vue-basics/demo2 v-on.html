@@ -3,8 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <title>v-on:click</title>
-    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
-  <body></body>
-  <script></script>
+  <body>
+    <div id = "app">
+      {{message}}
+      <button @click = "message = 'Vue is fun'">Click me</button>
+    </div>
+  </body>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello again!"
+      },
+      methods: {
+        funcl: function(msg) {
+          alert("I am being clicked")
+          this.message = msg
+        
+        }
+      }
+    })
+  </script>
 </html>
