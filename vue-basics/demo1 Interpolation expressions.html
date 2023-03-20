@@ -4,15 +4,20 @@
     <meta charset="utf-8" />
     <title>Interpolation expressions</title>
 
-    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <h1>
+      <h1 v-cloak>
         {{ message }}
       </h1>
-      <h1> {{ number }} </h1>
-      <p> 
+      <h1 v-cloak> {{ number }} </h1>
+      <p v-cloak> 
         {{ number * 2 + 10 }}
       </p>
     </div>
@@ -23,11 +28,12 @@
         const app = new Vue({
           el: "#app",
           data: {
-            message: "Hello World",
+            message: "Hello Vue",
             number: 100
           }
         })
-      }, 3000)
+      }, 1)
+
     </script>
   </body>
   <script></script>
