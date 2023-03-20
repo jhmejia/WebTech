@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -6,6 +6,29 @@
 
     <script src="https://unpkg.com/vue@latest"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <h1>
+        {{ message }}
+      </h1>
+      <h1> {{ number }} </h1>
+      <p> 
+        {{ number * 2 + 10 }}
+      </p>
+    </div>
+
+
+    <script>
+      setInterval(function() {
+        const app = new Vue({
+          el: "#app",
+          data: {
+            message: "Hello World",
+            number: 100
+          }
+        })
+      }, 3000)
+    </script>
+  </body>
   <script></script>
 </html>
